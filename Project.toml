@@ -3,8 +3,6 @@ uuid = "a1e3d965-d0f2-44da-8efb-760c74c77fed"
 version = "0.1.0"
 authors = ["Jesper "]
 
-[workspace]
-projects = ["test"]
 
 [deps]
 Ferrite = "c061ca5d-56c9-439f-9c0e-210fe06d3992"
