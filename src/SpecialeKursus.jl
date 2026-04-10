@@ -28,6 +28,13 @@ struct LinearElasticMaterial
     C_dev::SymmetricTensor{4, 2, Float64, 9}
 end
 
+struct PhaseFieldMaterial
+    g_c::Float64
+    l::Float64
+    k::Float64
+end
+
+
 
 #Functions
 function reinit_scheme!(scheme::StandardIntegration, cell)
@@ -47,7 +54,7 @@ end
 get_primary_cv(scheme::StandardIntegration) = scheme.cellvalues
 get_primary_cv(scheme::ReducedIntegration)  = scheme.cellvalues_dev
 
-
+include("phase_field.jl")
 include("Material_tensors.jl")
 include("External_traction.jl")
 include("cell_assembly.jl")
@@ -63,6 +70,10 @@ include("stress_update.jl")
 include("assemble_plastic.jl")
 include("material_response.jl")
 
+
+export solve_mechanics!
+export solve_phasefield!
+export update_history!
 export PlasticState
 export init_plastic_state
 export assemble_external_forces!
@@ -75,6 +86,7 @@ export cell_von_mises_plane_strain
 export StandardIntegration
 export ReducedIntegration
 export LinearElasticMaterial
+export PhaseFieldMaterial
 export calculate_stresses
 export run_simulation
 export run_simulation_plastic
