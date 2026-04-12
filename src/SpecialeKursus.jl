@@ -96,5 +96,6 @@ export stress_update!
 export compute_Cep
 export assemble_plastic!
 export material_response
+export solve_phasefield!
 
 end # module JespersPackage
