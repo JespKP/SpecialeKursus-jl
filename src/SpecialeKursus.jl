@@ -97,5 +97,14 @@ export compute_Cep
 export assemble_plastic!
 export material_response
 export solve_phasefield!
+export compute_cell_psi
+export spectral_tangent
+export _bottom_x_dofs
+export solve_mechanics_spectral!
+export spectral_split
+export compute_cell_psi_spectral
+export assemble_cell_mechanics_spectral!
+export update_history_spectral!
+export compute_cell_H
 
 end # module JespersPackage
